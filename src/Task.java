@@ -52,11 +52,25 @@ public class Task implements Serializable
 
     @Override
     public String toString() {
+        String priority;
+        switch (mPriority){
+            case 1:
+                priority = "High";
+                break;
+            case 2:
+                priority = "Medium";
+                break;
+            case 3:
+                priority = "Low";
+                break;
+            default: priority = "Unknown";
+        }
+
         return "Task{" +
-                "mName='" + mName + '\'' +
+                " mName='" + mName + '\'' +
                 ", mDueDate='" + mDueDate + '\'' +
                 ", mDeadline='" + mDeadline + '\'' +
-                ", mPriority=" + mPriority +
+                ", mPriority=" + priority +
                 '}';
     }
 
